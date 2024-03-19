@@ -25,6 +25,7 @@ begin
 
                                                     avancar = 1'b1;
                                                     girar = 1'b0;
+                                                    estado_futuro = estado_atual
 
                                                 end
 
@@ -32,6 +33,7 @@ begin
 
                                                     avancar = 1'b1;
                                                     girar = 1'b0;
+                                                    estado_futuro = acompanhando_muro
 
                                                 end
 
@@ -39,6 +41,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = rotacionando
 
                                                 end
 
@@ -46,6 +49,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = rotacionando
 
                                                 end
                                             endcase
@@ -54,6 +58,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = estado_atual
 
                                                 end
 
@@ -61,6 +66,7 @@ begin
 
                                                     avancar = 1'b1;
                                                     girar = 1'b0;
+                                                    estado_futuro = acompanhando_muro
 
                                                 end
 
@@ -68,6 +74,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = estado_atual
 
                                                 end
 
@@ -75,6 +82,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = estado_atual
 
                                                 end
 
@@ -86,6 +94,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = procurando_muro
 
                                                 end
 
@@ -93,6 +102,7 @@ begin
 
                                                     avancar = 1'b1;
                                                     girar = 1'b0;
+                                                    estado_futuro = estado_atual
 
                                                 end
 
@@ -100,6 +110,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = procurando_muro
 
                                                 end
 
@@ -107,6 +118,7 @@ begin
 
                                                     avancar = 1'b0;
                                                     girar = 1'b1;
+                                                    estado_futuro = rotacionando
 
                                                 end
 
