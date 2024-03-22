@@ -29,7 +29,7 @@ module Robo (clock, reset, head, left, avancar, girar);
 				procurando_muro: begin
 					if(head == 1'b0 & left == 1'b0) 
 					begin
-						state <= procurando_muro; // Não sei se a sintaxe está correta
+						state <= procurando_muro;
 					end 
 					
 					else if(head == 1'b1 & left == 1'b0) 
@@ -97,14 +97,14 @@ module Robo (clock, reset, head, left, avancar, girar);
 	end
 	
 	//Segundo Procedimento
-	always @(state or head or left) begin // Pode tá errado
+	always @(state or head or left) begin
 		case(state)
 		
 			procurando_muro: begin
 				if(head == 1'b0 & left == 1'b0) 
 				begin 
 					avancar = 1'b1;
-					girar = 1'b0; // Não sei se a sintaxe está correta
+					girar = 1'b0;
 				end
 			
 				else if(head == 1'b1 & left == 1'b0)
