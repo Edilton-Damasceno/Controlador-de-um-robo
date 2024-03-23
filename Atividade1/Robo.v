@@ -1,5 +1,5 @@
 /*
-cÃ³digo robo
+código robo
 */
 
 module Robo (clock, reset, head, left, avancar, girar);
@@ -22,71 +22,71 @@ module Robo (clock, reset, head, left, avancar, girar);
 	// Primeiro procedimento - Estado proximo
 	always @(negedge clock, negedge reset) 
 	begin
-		if(reset == 1'b0) state <= procurando_muro; // Se o reset for igual a zero volta para o estado inicial
+		if(reset == 1'b1) state <= procurando_muro; // Se o reset for igual a zero volta para o estado inicial
 		else 
 		begin
 			case(state)
 				procurando_muro: begin
-					if(head == 1'b0 & left == 1'b0) 
+					if(head == 1'b0 && left == 1'b0) 
 					begin
 						state <= procurando_muro;
 					end 
 					
-					else if(head == 1'b1 & left == 1'b0) 
+					else if(head == 1'b1 && left == 1'b0) 
 					begin
 						state  <= rotacionando;
 					end 
 					
-					else if(head == 1'b1 & left == 1'b1)
+					else if(head == 1'b1 && left == 1'b1)
 					begin
 						state  <= rotacionando;
 					end 
 					
-					else if(head == 1'b0 & left == 1'b1) 
+					else if(head == 1'b0 && left == 1'b1) 
 					begin
 						state  <= acompanhando_muro;
 					end
 				end
 				
 				acompanhando_muro: begin
-					if(head == 1'b0 & left == 1'b0)
+					if(head == 1'b0 && left == 1'b0)
 					begin
 						state  <= procurando_muro;
 					end 
 					
-					else if(head == 1'b1 & left == 1'b0) 
+					else if(head == 1'b1 && left == 1'b0) 
 					begin
 						state  <= procurando_muro;
 					end
 					
-					else if(head == 1'b1 & left == 1'b1) 
+					else if(head == 1'b1 && left == 1'b1) 
 					begin
 						state  <= rotacionando;
 					end 
 					
-					else if(head == 1'b0 & left == 1'b1) 
+					else if(head == 1'b0 && left == 1'b1) 
 					begin
 						state  <= acompanhando_muro; 
 					end
 				end
 				
 				rotacionando: begin
-					if(head == 1'b0 & left == 1'b0) 
+					if(head == 1'b0 && left == 1'b0) 
 					begin
 						state  <= rotacionando;
 					end
 				
-					else if(head == 1'b1 & left == 1'b0) 
+					else if(head == 1'b1 && left == 1'b0) 
 					begin
 						state  <= rotacionando;
 					end
 					
-					else if(head == 1'b1 & left == 1'b1) 
+					else if(head == 1'b1 && left == 1'b1) 
 					begin 
 						state  <= rotacionando;
 					end 
 					
-					else if(head == 1'b0 & left == 1'b1) 
+					else if(head == 1'b0 && left == 1'b1) 
 					begin
 						state  <= acompanhando_muro;
 					end
@@ -101,25 +101,25 @@ module Robo (clock, reset, head, left, avancar, girar);
 		case(state)
 		
 			procurando_muro: begin
-				if(head == 1'b0 & left == 1'b0) 
+				if(head == 1'b0 && left == 1'b0) 
 				begin 
 					avancar = 1'b1;
 					girar = 1'b0;
 				end
 			
-				else if(head == 1'b1 & left == 1'b0)
+				else if(head == 1'b1 && left == 1'b0)
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b1 & left == 1'b1) 
+				else if(head == 1'b1 && left == 1'b1) 
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b0 & left == 1'b1) 
+				else if(head == 1'b0 && left == 1'b1) 
 				begin 
 					avancar = 1'b1;
 					girar = 1'b0;
@@ -127,25 +127,25 @@ module Robo (clock, reset, head, left, avancar, girar);
 			end
 			
 			acompanhando_muro: begin
-				if(head == 1'b0 & left == 1'b0) 
+				if(head == 1'b0 && left == 1'b0) 
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b1 & left == 1'b0) 
+				else if(head == 1'b1 && left == 1'b0) 
 				begin 
 					avancar = 1'b0;
 					girar = 1'b1;
 				end
 			
-				else if(head == 1'b1 & left == 1'b1) 
+				else if(head == 1'b1 && left == 1'b1) 
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b0 & left == 1'b1) 
+				else if(head == 1'b0 && left == 1'b1) 
 				begin
 					avancar = 1'b1;
 					girar = 1'b0;
@@ -153,25 +153,25 @@ module Robo (clock, reset, head, left, avancar, girar);
 			end
 			
 			rotacionando: begin
-				if(head == 1'b0 & left == 1'b0) 
+				if(head == 1'b0 && left == 1'b0) 
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b1 & left == 1'b0)
+				else if(head == 1'b1 && left == 1'b0)
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end 
 				
-				else if(head == 1'b1 & left == 1'b1) 
+				else if(head == 1'b1 && left == 1'b1) 
 				begin
 					avancar = 1'b0;
 					girar = 1'b1;
 				end
 				
-				else if(head == 1'b0 & left == 1'b1) 
+				else if(head == 1'b0 && left == 1'b1) 
 				begin
 					avancar = 1'b1;
 					girar = 1'b0;
